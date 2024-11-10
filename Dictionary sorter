@@ -1,0 +1,21 @@
+def main():
+    
+    user_input = input("Enter a dictionary (in the form of {key: value, key: value}): ")
+    
+    
+        user_dict = eval(user_input)  # Use eval to convert string input to a dictionary
+        if not isinstance(user_dict, dict):
+            raise ValueError("Input is not a valid dictionary.")
+        
+        
+        sorted_dict = dict(sorted(user_dict.items()))
+        
+        
+        print("Sorted Dictionary:", sorted_dict)
+    
+    except Exception as e:
+        print(f"Error: {e}")
+
+
+if __name__ == "__main__":
+    main()
