@@ -1,0 +1,26 @@
+def is_prime(n):
+    """Return True if n is a prime number, else False."""
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def find_primes_in_range(start, end):
+    """Return a list of prime numbers in the given range [start, end]."""
+    primes = []
+    for num in range(start, end + 1):
+        if is_prime(num):
+            primes.append(num)
+    return primes
+
+
+start = int(input("Enter the starting number of the range: "))
+end = int(input("Enter the ending number of the range: "))
+
+
+primes = find_primes_in_range(start, end)
+
+
+print(f"Prime numbers in the range {start} to {end}: {primes}")
